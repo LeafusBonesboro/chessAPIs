@@ -1,4 +1,10 @@
 {
+  "name": "chessapis-root",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "deploy": "npm run deploy --prefix frontend"
+  },
   "devDependencies": {
     "gh-pages": "^6.1.1"
   }
