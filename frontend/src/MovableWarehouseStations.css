@@ -1,0 +1,16 @@
+/* MovableWarehouseStations.css */
+
+.movable-container {
+  width: 600px; /* Adjust the width as needed */
+  height: 400px; /* Adjust the height as needed */
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+  
+  .resizable-box {
+    border: 1px solid #ddd;
+  }
+  
