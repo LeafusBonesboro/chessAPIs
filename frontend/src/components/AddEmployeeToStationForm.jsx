@@ -1,7 +1,7 @@
-// src/AddEmployeeToStationForm.jsx
+// src/components/AddEmployeeToStationForm.jsx
 
 import React, { useState, useEffect } from 'react';
-import { mockData } from './data/mockData';
+import { mockData } from '../data/mockData';
 
 const AddEmployeeToStationForm = ({ onAssign }) => {
   const [selectedStation, setSelectedStation] = useState('');

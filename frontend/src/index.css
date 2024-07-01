@@ -5,7 +5,42 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
+  color-scheme: light dark;@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap');
+
+  html,
+  body,
+  #root,
+  .app,
+  .content {
+   height: 100%;
+   width: 100%;
+   font-family: 'Source Sans 3', sans-serif;
+  }
+  
+  .app {
+    display: flex;
+    position: relative;
+  }
+  
+  ::-webkit-scrollbar{
+  width: 10px
+  }
+  
+  /* Track*/
+  ::-webkit-scrollbar-track {
+    background: #e0e0e0;
+  } 
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+   background: #888;
+  }
+  
+  /* Handle on Hover */
+  ::-webkit-scrollbar-track:hover {
+    background: #555;
+  }
+  
   color: rgba(253, 247, 247, 0.87);
   background-color: #242424;
 
@@ -13,6 +48,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
 }
 
 a {
