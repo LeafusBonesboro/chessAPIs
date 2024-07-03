@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import { Box, Button, IconButton, Typography, useTheme } from "@mui/material";
 import { tokens } from "../../theme";
 import { mockTransactions } from "../../data/mockData";
@@ -276,9 +277,30 @@ const Dashboard = () => {
             <LineChart isDashboard={true} />
           </Box>
         </Box>
+=======
+// src/scenes/dashboard/index.jsx
+import React from 'react';
+import { Box, Button } from '@mui/material';
+
+const Dashboard = () => {
+  return (
+    <Box m="20px">
+      <Box mb="20px">
+        <h1>Welcome to the Dashboard</h1>
+        <p>Select a scene from below:</p>
+      </Box>
+      <Box mt="20px">
+        <Button href="/assignments" variant="contained" color="primary">Assignments</Button>
+        <Button href="/stations" variant="contained" color="secondary" sx={{ ml: 2 }}>Stations</Button>
+        <Button href="/table" variant="contained" color="success" sx={{ ml: 2 }}>Table</Button>
+>>>>>>> Stashed changes
       </Box>
     </Box>
   );
 };
 
+<<<<<<< Updated upstream
 export default Dashboard;
+=======
+export default Dashboard;
+>>>>>>> Stashed changes
