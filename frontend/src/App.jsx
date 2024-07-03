@@ -11,9 +11,6 @@ Modal.setAppElement('#root');
 function App() {
   const [stations, setStations] = useState(mockData.stations);
   const [selectedStation, setSelectedStation] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false); // State for confirmation modal
-  const [randomStation, setRandomStation] = useState(null);
-  const [randomEmployee, setRandomEmployee] = useState(null);
 
   const handleAssignEmployee = (stationId, employeeId) => {
     const updatedStations = stations.map(station => {
@@ -45,18 +42,7 @@ function App() {
       return;
     }
 
-    setRandomStation(station);
-    setRandomEmployee(employee);
-    setIsModalOpen(true);  // Open the confirmation modal
-  };
-
-  const handleConfirmAssignment = () => {
-    if (randomStation && randomEmployee) {
-      handleAssignEmployee(randomStation.id, randomEmployee.id);
-    }
-    setIsModalOpen(false);
-    setRandomStation(null);
-    setRandomEmployee(null);
+    handleAssignEmployee(station.id, employee.id);
   };
 
   const openModal = (station) => {
@@ -73,6 +59,8 @@ function App() {
         <div className="sidebar">
           <AddEmployeeToStationForm onAssign={handleAssignEmployee} />
           <button onClick={handleAssignRandomStation}>Assign Random Station</button>
+
+          {/* Station Detail Modal */}
           {selectedStation && (
             <Modal
               isOpen={!!selectedStation}
@@ -86,19 +74,6 @@ function App() {
               <button onClick={closeModal}>Close</button>
             </Modal>
           )}
-          {/* Confirmation Modal */}
-          <Modal
-            isOpen={isModalOpen}
-            onRequestClose={() => setIsModalOpen(false)}
-            className="modal-content"
-            overlayClassName="modal-overlay"
-            contentLabel="Confirm Assignment"
-          >
-            <h2>Confirm Assignment</h2>
-            <p>Are you sure you want to assign {randomEmployee?.name} to station {randomStation?.id}?</p>
-            <button onClick={handleConfirmAssignment}>Yes</button>
-            <button onClick={() => setIsModalOpen(false)}>No</button>
-          </Modal>
         </div>
         <div className="form-container">
           <WarehouseStations stations={stations} onStationClick={openModal} />
